@@ -13,7 +13,7 @@ mongoose
     useFindAndModify: false,
   })
   .then((instance) =>
-    console.log(`Connects to db: ${instance.connections[0].name}`)
+    console.log(`Connects to db: ${instance.connections.name}`)
   )
   .catch((error) => console.log("no dice", error));
 
