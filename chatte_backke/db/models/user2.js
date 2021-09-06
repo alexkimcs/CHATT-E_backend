@@ -1,12 +1,15 @@
-const mongoose = require('../connection')
+// const mongoose = require('../connection')
 
-const User2Schema = new mongoose.Schema(
-    {
+// const User2Schema = new mongoose.Schema(
+//     {
+//         userid: String ,
+//         name: String,
+//         message: String,
+//         recieved: false,
+//     },
+//     {timestamps: true}
+// )
 
-    },
-    {timestamps: true}
-)
+// const User2 = mongoose.model('Todo', User2Schema)
 
-const User2 = mongoose.model('Todo', User2Schema)
-
-module.exports = User2
+// module.exports = User2
