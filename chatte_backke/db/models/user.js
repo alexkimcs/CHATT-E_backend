@@ -1,8 +1,7 @@
 const mongoose = require('../connection')
 
-const User1Schema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
-        userid: String ,
         name: String,
         message: String,
         recieved: false,
@@ -10,6 +9,6 @@ const User1Schema = new mongoose.Schema(
     {timestamps: true}
 )
 
-const User1 = mongoose.model('Todo', User1Schema)
+const user = mongoose.model('user', userSchema)
 
-module.exports = User1
+module.exports = user;
