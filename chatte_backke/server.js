@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
 
 //io
 io.on("connection", socket => {
-    console.log('user connected');
+    console.log('userIO.on connected');
     // socket.emit('message', 'hello from backend');
     socket.on('disconnect', () => {
         console.log('user disconnected')
