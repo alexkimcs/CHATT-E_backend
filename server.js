@@ -8,15 +8,15 @@ const io = require('socket.io')(5000, {
     }
 });
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({entended: true}));
-
 //Schemas
 const User = require('./db/models/user');
 const Message = require('./db/models/message');
 
-//Controllers go here
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({entended: true}));
+
+//Controllers
 const userController = require('./controller/userController');
 app.use('/api/users', userController);
 
