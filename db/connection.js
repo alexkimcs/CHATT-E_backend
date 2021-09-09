@@ -9,7 +9,7 @@ mongoose.connect(mongoURI, {
     // useFindAndModify: false,
 })
 
-.then((instance) => console.log(`Connect to db: ${instance.connection[0].name}`))
+.then((instance) => console.log(`Connect to db: ${instance.connection.name}`))
 .catch((error) => console.log('Connection failed!', error))
 
 module.exports = mongoose
