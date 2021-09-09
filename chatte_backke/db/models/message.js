@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('../messageConnection')
 
 const msgSchema = new mongoose.Schema({
     name: String,
