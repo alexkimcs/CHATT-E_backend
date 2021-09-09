@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const mongoURI = process.env.NODE_ENV === 'production' ? process.env.DB_URL : 'mongodb://localhost:27017/chatte'
+const mongoURI = process.env.NODE_ENV === 'production' ? process.env.DB_URL : 'mongodb://localhost/chatte'
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -9,7 +9,7 @@ mongoose.connect(mongoURI, {
     useFindAndModify: false,
 })
 
-.then((chat) => console.log(`Connect to db: ${chat.connection[0].name}`))
+.then((instance) => console.log(`Connect to db: ${instance.connection[0].name}`))
 .catch((error) => console.log('Connection failed!', error))
 
 module.exports = mongoose

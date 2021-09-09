@@ -1,23 +1,46 @@
 const express = require('express');
-
-//app config
+const cors = require('cors');
 const app = express();
+const io = require('socket.io')(5000, {
+    cors: {
+        origin: "http://localhost:3000",
+        method: ['GET', 'POST']
+    }
+});
 
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
-const port = process.env.PORT || 4000;
+app.use(express.urlencoded({entended: true}));
+
 
 //Controllers go here
-// const user1Controller = require('./controller/user1`');
-// app.get('/user1', user1Controller)
-// app.use('/user1', user1Controller)
+const userController = require('');
+app.use('/api/users', userController);
 
+const messageController = require('');
+app.use('/api/messages', messageController);
 
-//local port
-app.get('/', (req, res) => {
-    res.send('Chatt-E')
-})
+app.get('/', (req,res) => {
+    res.redirect('/api/messages')
+});
+
+//io
+io.on("connection", socket => {
+    console.log('user connected');
+    // socket.emit('message', 'hello from backend');
+    socket.on('disconnect', () => {
+        console.log('user disconnected')
+    })
+    socket.on('chatMessage', msg => {
+        io.emit('message', msg)
+    })
+});
+
+app.set('port', process.env.PORT || 4000)
+
 
 
 //LISTEN    
-app.listen(port, () => {console.log(`running on port ${port}`)})
+app.listen(app.get('port'), () => {
+    console.log(`Server is connected and listening on port: ${app.get('port')}`)
+})
