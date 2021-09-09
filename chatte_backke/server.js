@@ -14,10 +14,10 @@ app.use(express.urlencoded({entended: true}));
 
 
 //Controllers go here
-const userController = require('');
+const userController = require('./controller/userController');
 app.use('/api/users', userController);
 
-const messageController = require('');
+const messageController = require('./controller/messageController');
 app.use('/api/messages', messageController);
 
 app.get('/', (req,res) => {

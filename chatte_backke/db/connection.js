@@ -4,9 +4,9 @@ const mongoURI = process.env.NODE_ENV === 'production' ? process.env.DB_URL : 'm
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
-    useCreateIndex: true,
+    // useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    // useFindAndModify: false,
 })
 
 .then((instance) => console.log(`Connect to db: ${instance.connection[0].name}`))
