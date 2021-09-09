@@ -44,7 +44,7 @@ Add additional notes to deploy this on a live system
   - [Express(.js)](https://creativecommons.org/) - Node.js web framework
   - [React(.js)](https://reactjs.org) - a client-side JavaScript framework
   - [Node(.js)](https://creativecommons.org/) -premier JavaScript web server
-  - [Socket(.io)]https://socket.io) - a library that enables real-time, bidirectional and event-based communication between the browser and the server
+  - [Socket(.io)](https://socket.io) - a library that enables real-time, bidirectional and event-based communication between the browser and the server
   - [Node(.js)](https://creativecommons.org/) -premier JavaScript web server
 
 ## Contributing
